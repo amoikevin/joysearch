@@ -52,7 +52,7 @@ public abstract class Deployer {
     /**
      * IIS location
      */
-    protected static final String IIS_PATH = "C:/JoyDK/Java/bin/Tomcat/webapps/ROOT/";
+    protected static final String WEBAPP_PATH = "C:/JoyDK/Java/bin/Tomcat/webapps/ROOT/";
     /**
      * The location of ur log files.
      */
@@ -163,7 +163,7 @@ public abstract class Deployer {
 
         reader = new InputStreamReader(System.in);
         buf = new BufferedReader(reader);
-        deployIIS(new File(jarFile));
+        deployWebApp(new File(jarFile));
         System.setProperty("java.rmi.server.codebase", "http://" + IPAddress + ":8080/" + projName + "/" + projName + ".jar");
         System.setProperty("java.security.policy", "policy.txt");
         System.setSecurityManager(new RMISecurityManager());
@@ -206,9 +206,9 @@ public abstract class Deployer {
      */
     private void deployIIS() {
         logger.info("正在配置IIS...");
-        File folder = new File(IIS_PATH + projName + "\\");
+        File folder = new File(WEBAPP_PATH + projName + "\\");
         folder.mkdir();
-        File dest = new File(IIS_PATH + projName + "\\" + projName + ".jar");
+        File dest = new File(WEBAPP_PATH + projName + "\\" + projName + ".jar");
         File jar = new File(JAR_PATH + projName + ".jar");
         if (dest.length() != jar.length()) {
             logger.info("需要配置IIS");
@@ -224,11 +224,11 @@ public abstract class Deployer {
      * deploy IIS
      * @param projectName current project name
      */
-    private void deployIIS(File jar) {
+    private void deployWebApp(File jar) {
         logger.info("正在配置IIS...");
-        File folder = new File(IIS_PATH + projName + "\\");
+        File folder = new File(WEBAPP_PATH + projName + "\\");
         folder.mkdir();
-        File dest = new File(IIS_PATH + projName + "\\" + projName + ".jar");
+        File dest = new File(WEBAPP_PATH + projName + "\\" + projName + ".jar");
         if (dest.length() != jar.length()) {
             logger.info("需要配置IIS");
             try {

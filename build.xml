@@ -10,6 +10,7 @@
 <project name="joysearch" default="default" basedir=".">
     <description>Builds, tests, and runs the project joysearch.</description>
     <import file="nbproject/build-impl.xml"/>
+    <property name="webapp.dir" value="webapp/"/>
     <!--
 
     There exist several targets which are by default empty and which can be 
@@ -71,4 +72,37 @@
     nbproject/build-impl.xml file. 
 
     -->
+    <target name="-post-compile">
+        <exec executable="${java.home}\..\bin\rmic.exe">
+            <arg line="-classpath build\classes -d build\classes org.joy.dblookup.service.DBGroupImp"/>
+        </exec>
+        <exec executable="${java.home}\..\bin\rmic.exe">
+            <arg line="-classpath build\classes -d build\classes org.joy.lookup.service.GroupImp"/>
+        </exec>
+        <exec executable="${java.home}\..\bin\rmic.exe">
+            <arg line="-classpath build\classes -d build\classes org.joy.spider.service.SpiderGroupImp"/>
+        </exec>
+        <exec executable="${java.home}\..\bin\rmic.exe">
+            <arg line="-classpath build\classes; -d build\classes org.joy.index.service.ServerImp"/>
+        </exec>
+        <exec executable="${java.home}\..\bin\rmic.exe">
+            <arg line="-classpath C:\JoyDK\Java\servers\Group\build\classes;build\classes -d build\classes org.joy.analyzer.service.ServerImp"/>
+        </exec>
+        <exec executable="${java.home}\..\bin\rmic.exe">
+            <arg line="-classpath C:\JoyDK\Java\servers\Group\build\classes;build\classes -d build\classes org.joy.spider.service.ServerImp"/>
+        </exec>
+        <exec executable="${java.home}\..\bin\rmic.exe">
+            <arg line="-classpath C:\JoyDK\Java\Servers\Barton\build\classes;build\classes; -d build\classes org.joy.query.service.ServerImp"/>
+        </exec>
+        <exec executable="${java.home}\..\bin\rmic.exe">
+            <arg line="-classpath build\classes -d build\classes org.joy.rank.service.ServerImp"/>
+        </exec>
+    </target>
+    <target name="-post-jar">
+        <copy todir="${webapp.dir}">
+            <fileset dir="dist\">
+                <include name="*.jar" />
+            </fileset>
+        </copy>
+    </target>
 </project>
