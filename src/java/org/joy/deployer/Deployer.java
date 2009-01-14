@@ -132,8 +132,8 @@ public abstract class Deployer {
         //控制台输入控制类
         reader = new InputStreamReader(System.in);
         buf = new BufferedReader(reader);
-        deployIIS();
-        System.setProperty("java.rmi.server.codebase", "http://" + IPAddress + ":8080/" + projName + "/" + projName + ".jar");
+       // deployIIS();
+        System.setProperty("java.rmi.server.codebase", "http://" + IPAddress + ":8080/joysearch.jar");
         System.setProperty("java.security.policy", "policy.txt");
         System.setSecurityManager(new RMISecurityManager());
 
@@ -163,8 +163,8 @@ public abstract class Deployer {
 
         reader = new InputStreamReader(System.in);
         buf = new BufferedReader(reader);
-        deployWebApp(new File(jarFile));
-        System.setProperty("java.rmi.server.codebase", "http://" + IPAddress + ":8080/" + projName + "/" + projName + ".jar");
+        //deployWebApp(new File(jarFile));
+        System.setProperty("java.rmi.server.codebase", "http://" + IPAddress + ":8080/joysearch.jar");
         System.setProperty("java.security.policy", "policy.txt");
         System.setSecurityManager(new RMISecurityManager());
 
