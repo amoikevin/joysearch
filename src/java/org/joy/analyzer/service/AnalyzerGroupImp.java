@@ -26,8 +26,8 @@ public class AnalyzerGroupImp extends GroupImp implements AnalyzerGroup {
     }
 
     public AnalyzerGroupImp(Properties p) throws RemoteException {
-        String[] allowed = p.getProperty("allowed").split(";");
-        String[] denied = p.getProperty("denied").split(";");
+        String[] allowed = p.getProperty("host.allowed").split(";");
+        String[] denied = p.getProperty("host.denied").split(";");
         hostsAllowed = new HashSet<String>(Arrays.asList(allowed));
         hostsDenied = new HashSet<String>(Arrays.asList(denied));
     }

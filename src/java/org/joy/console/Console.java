@@ -58,11 +58,8 @@ public class Console {
      */
     public Console(long refreshDelay, String confFile) throws ConsoleException {
         try {
-            System.setProperty("java.security.policy", "policy.txt");
+            System.setProperty("java.security.policy", "conf/policy.txt");
             System.setSecurityManager(new RMISecurityManager());
-            //打开配置文件，读入各个远程接口的地址
-            Properties p = new Properties();
-            p.load(new FileInputStream(new File(confFile)));
             //查找远程接口
             indexer = new DBGroupProxy((DBGroup) Naming.lookup("DBGroup"));
             pool = new AnalyzerGroupProxy((AnalyzerGroup) Naming.lookup("AnaGroup"));

@@ -8,11 +8,9 @@
  */
 package org.joy.analyzer.service;
 
-import java.io.FileOutputStream;
 import org.joy.deployer.Deployer;
 import java.rmi.RemoteException;
 import java.util.Arrays;
-import java.util.Properties;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;

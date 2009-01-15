@@ -101,7 +101,7 @@ public abstract class Deployer {
 //        System.setOut(new PrintStream("logs/" + moduleName + ".log"));
         System.setErr(System.out);
         IPAddress = Inet4Address.getLocalHost().getHostAddress();
-        loadProperties(moduleName);
+        loadProperties();
         //删除已经存在的Log文件
         (new File(LOG_PATH + moduleName + ".log")).delete();
 
@@ -150,8 +150,8 @@ public abstract class Deployer {
      * @throws java.io.FileNotFoundException
      * @throws java.io.IOException
      */
-    private void loadProperties(String moduleName) throws FileNotFoundException, IOException {
-        FileInputStream fis = new FileInputStream(CONF_PATH + moduleName + ".txt");
+    private void loadProperties() throws FileNotFoundException, IOException {
+        FileInputStream fis = new FileInputStream(CONF_PATH + "JoySite.conf");
         properties.load(fis);
     }
 
