@@ -1,0 +1,8 @@
+#Sun May 27 11:19:57 CST 2007
+HostsIn=localhost
+HostsEx=library.suda.edu.cn;scit.suda.edu.cn;math.suda.edu.cn;http://www2.suda.edu.cn/department/ysxy/;csts.suda.edu.cn/rcpy;fygwxy.suda.edu.cn/main/rcpy/;xsc.suda.edu.cn;ysxy.suda.edu.cn;
+
+
+
+
+

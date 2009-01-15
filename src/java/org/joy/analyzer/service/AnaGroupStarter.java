@@ -15,7 +15,7 @@ public class AnaGroupStarter extends Deployer {
      * 挂载器构造函数
      */
     public AnaGroupStarter() {
-        super("AnaGroup", "dist/Group.jar");
+        super("AnaGroup");
     }
 
     @Override

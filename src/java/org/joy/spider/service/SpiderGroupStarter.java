@@ -13,7 +13,7 @@ import org.joy.deployer.Deployer;
 public class SpiderGroupStarter extends Deployer {
     private SpiderGroupImp server;
     public SpiderGroupStarter() {
-        super("SpiderGroup","dist/Group.jar");
+        super("SpiderGroup");
     }
 
     @Override

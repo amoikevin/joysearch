@@ -16,7 +16,7 @@ import org.joy.deployer.Deployer;
 public class DBGroupStarter extends Deployer {
     private DBGroupImp server;
     public DBGroupStarter() {
-        super("DBGroup","dist/Group.jar");
+        super("DBGroup");
     }
 
     @Override

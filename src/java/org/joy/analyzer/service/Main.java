@@ -8,12 +8,11 @@
  */
 package org.joy.analyzer.service;
 
-import java.rmi.NotBoundException;
+import java.io.FileOutputStream;
 import org.joy.deployer.Deployer;
-import java.io.IOException;
-import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.Arrays;
+import java.util.Properties;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -77,7 +76,7 @@ public class Main extends Deployer {
         }
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         (new Main()).run();
     }
 

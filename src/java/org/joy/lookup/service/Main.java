@@ -37,7 +37,6 @@ public class Main {
         done();
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
-        System.setSecurityManager(new RMISecurityManager());
         try {
             while (buf.readLine().equals("q")) {
                 System.exit(0);
