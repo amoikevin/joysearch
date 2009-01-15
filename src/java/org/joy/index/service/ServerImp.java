@@ -11,7 +11,7 @@ package org.joy.index.service;
 import org.joy.query.SearchServer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.joy.lookup.service.Job;
+import org.joy.group.service.Job;
 import org.joy.query.Cursor;
 import org.joy.index.db.Cache;
 import org.joy.index.db.DocumentCommand;
@@ -29,9 +29,9 @@ import java.rmi.server.UnicastRemoteObject;
 import org.joy.db.Command;
 import org.joy.db.DBException;
 import org.joy.db.ResultReader;
-import org.joy.dblookup.service.Database;
-import org.joy.dblookup.service.IndexJob;
-import org.joy.dblookup.service.RankUpdateJob;
+import org.joy.index.service.Database;
+import org.joy.index.service.IndexJob;
+import org.joy.index.service.RankUpdateJob;
 import org.joy.deployer.Deployer;
 import org.joy.index.util.RIS;
  
@@ -130,8 +130,9 @@ public class ServerImp extends UnicastRemoteObject implements SearchServer, Data
                 ResultReader reader = docCmd.search(job.getURL(), true);
                 if (!reader.next()) {
                     reader.close();
-                    System.out.println("不存在"+job.getURL());
-                    throw new IllegalArgumentException();
+                    //System.out.println("不存在"+job.getURL());
+                    Deployer.logger.warn("警告：试图给不存的URL"+job.getURL()+"更新Rank");
+                    //throw new IllegalArgumentException();
                 }
                 Document docInfo = (Document) reader.getValue();
                 docInfo.setRank(job.getRank());

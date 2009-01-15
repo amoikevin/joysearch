@@ -74,10 +74,7 @@
     -->
     <target name="-post-compile">
         <exec executable="${java.home}\..\bin\rmic.exe">
-            <arg line="-classpath build\classes -d build\classes org.joy.dblookup.service.DBGroupImp"/>
-        </exec>
-        <exec executable="${java.home}\..\bin\rmic.exe">
-            <arg line="-classpath build\classes -d build\classes org.joy.lookup.service.GroupImp"/>
+            <arg line="-classpath build\classes -d build\classes org.joy.index.service.DBGroupImp"/>
         </exec>
         <exec executable="${java.home}\..\bin\rmic.exe">
             <arg line="-classpath build\classes -d build\classes org.joy.spider.service.SpiderGroupImp"/>

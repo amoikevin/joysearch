@@ -13,8 +13,8 @@ import java.util.UUID;
 import org.joy.deployer.Deployer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.joy.lookup.service.Group;
-import org.joy.lookup.service.Locator;
+import org.joy.group.service.Group;
+import org.joy.group.service.Locator;
 
 /**
  *

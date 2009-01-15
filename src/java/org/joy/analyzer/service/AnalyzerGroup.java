@@ -6,7 +6,7 @@ package org.joy.analyzer.service;
 
 import java.rmi.RemoteException;
 import java.util.HashSet;
-import org.joy.lookup.service.Group;
+import org.joy.group.service.Group;
 
 /**
  *

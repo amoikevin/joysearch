@@ -14,8 +14,8 @@ import java.util.Arrays;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.joy.dblookup.service.DBGroup;
-import org.joy.lookup.service.Locator;
+import org.joy.index.service.DBGroup;
+import org.joy.group.service.Locator;
 import org.joy.rank.service.LinkSystemAnalyzer;
 import org.joy.spider.service.SpiderGroup;
 

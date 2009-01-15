@@ -12,13 +12,13 @@ import java.rmi.server.UnicastRemoteObject;
 import org.joy.deployer.Deployer;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
-import org.joy.dblookup.service.DBGroup;
+import org.joy.index.service.DBGroup;
 import org.joy.query.Result;
 /**
  *
  * @author AC
  */
-import org.joy.dblookup.service.DBGroupProxy;
+import org.joy.index.service.DBGroupProxy;
 
 public class Main extends Deployer {
 

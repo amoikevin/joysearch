@@ -4,7 +4,7 @@
  */
 package org.joy.spider.service;
 
-import org.joy.lookup.service.Job;
+import org.joy.group.service.Job;
 
 /**
  *

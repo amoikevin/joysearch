@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.joy.lookup.service;
+package org.joy.group.service;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,7 +12,7 @@ import java.rmi.Naming;
 import java.rmi.RMISecurityManager;
 import java.util.Arrays;
 import org.joy.analyzer.service.AnaGroupStarter;
-import org.joy.dblookup.service.DBGroupStarter;
+import org.joy.index.service.DBGroupStarter;
 import org.joy.spider.service.SpiderGroupStarter;
 
 /**

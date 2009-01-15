@@ -3,14 +3,13 @@
  * and open the template in the editor.
  */
 
-package org.joy.lookup.service;
-
-import java.io.Serializable;
+package org.joy.group.service;
 
 /**
  *
  * @author Lamfeeling
  */
-public interface JobResource extends Serializable {
-
+public enum WorkerState {
+    BUSY,
+    READY
 }

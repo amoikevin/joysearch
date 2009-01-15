@@ -11,7 +11,7 @@ package org.joy.rank.db;
 
 import java.io.Serializable;
 import java.util.HashSet;
-import org.joy.dblookup.service.UID;
+import org.joy.index.service.UID;
 
 /**
  *

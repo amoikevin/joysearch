@@ -6,9 +6,9 @@ package org.joy.analyzer.service;
 
 import java.rmi.RemoteException;
 import java.util.Random;
-import org.joy.lookup.service.Group;
-import org.joy.lookup.service.Job;
-import org.joy.lookup.service.Locator;
+import org.joy.group.service.Group;
+import org.joy.group.service.Job;
+import org.joy.group.service.Locator;
 
 /**
  *

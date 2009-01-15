@@ -5,7 +5,7 @@
 package org.joy.spider.service;
 
 import java.rmi.RemoteException;
-import org.joy.lookup.service.Group;
+import org.joy.group.service.Group;
 
 /**
  *

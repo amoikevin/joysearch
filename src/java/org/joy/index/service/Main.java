@@ -12,9 +12,9 @@ import org.joy.deployer.Deployer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import org.joy.dblookup.service.DBGroup;
-import org.joy.dblookup.service.Database;
-import org.joy.lookup.service.Locator;
+import org.joy.index.service.DBGroup;
+import org.joy.index.service.Database;
+import org.joy.group.service.Locator;
 
 /**
  *

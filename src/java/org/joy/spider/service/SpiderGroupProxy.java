@@ -7,8 +7,8 @@ package org.joy.spider.service;
 import java.rmi.RemoteException;
 import java.util.Random;
 import org.joy.deployer.Deployer;
-import org.joy.lookup.service.Job;
-import org.joy.lookup.service.Locator;
+import org.joy.group.service.Job;
+import org.joy.group.service.Locator;
 
 /**
  *

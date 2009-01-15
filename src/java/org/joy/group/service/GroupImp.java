@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.joy.lookup.service;
+package org.joy.group.service;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
@@ -20,7 +20,7 @@ import org.joy.deployer.Deployer;
  *
  * @author Lamfeeling
  */
-public class GroupImp extends UnicastRemoteObject implements Group {
+public abstract class GroupImp extends UnicastRemoteObject implements Group {
 
     protected Hashtable<Locator, WorkerState> workers = new Hashtable<Locator, WorkerState>();
     private final Object waiter = new Object();

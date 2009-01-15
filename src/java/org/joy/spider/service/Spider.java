@@ -6,7 +6,7 @@
 package org.joy.spider.service;
 
 import java.rmi.Remote;
-import org.joy.lookup.service.Worker;
+import org.joy.group.service.Worker;
 
 /**
  *

@@ -23,7 +23,7 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import org.joy.dblookup.service.DBGroupProxy;
+import org.joy.index.service.DBGroupProxy;
 import org.joy.query.SearchServer;
 import org.joy.query.BufferReader;
 import org.joy.query.CursorsHandler;

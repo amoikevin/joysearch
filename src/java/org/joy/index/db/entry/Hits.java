@@ -19,7 +19,7 @@ import java.util.Iterator;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.joy.lookup.service.JobResource;
+import org.joy.group.service.JobResource;
 
 /**
  *

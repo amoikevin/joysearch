@@ -11,7 +11,7 @@ package org.joy.rank.service;
 import org.joy.deployer.Deployer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.joy.dblookup.service.DBGroup;
+import org.joy.index.service.DBGroup;
 
 /**
  *

@@ -25,7 +25,7 @@ import org.joy.pagerank.BigBoolArray;
 import org.joy.pagerank.PageRank;
 import org.joy.deployer.Deployer;
 import org.joy.db.Command;
-import org.joy.dblookup.service.UID;
+import org.joy.index.service.UID;
 /**
  *
  * @author 海

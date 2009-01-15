@@ -11,7 +11,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.joy.lookup.service.Job;
+import org.joy.group.service.Job;
 import org.joy.spider.service.DownloadJob;
 
 /**

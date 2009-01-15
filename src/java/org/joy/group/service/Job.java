@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package org.joy.lookup.service;
+package org.joy.group.service;
 
 import java.io.Serializable;
 

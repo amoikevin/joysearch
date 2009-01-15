@@ -11,7 +11,7 @@ import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.joy.db.DBException;
-import org.joy.lookup.service.GroupImp;
+import org.joy.group.service.GroupImp;
 
 /**
  *

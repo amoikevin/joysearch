@@ -8,7 +8,7 @@ import java.rmi.RemoteException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Properties;
-import org.joy.lookup.service.GroupImp;
+import org.joy.group.service.GroupImp;
 
 /**
  *
