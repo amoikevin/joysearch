@@ -9,7 +9,7 @@
 package org.joy.spider.download;
 
 import java.util.Vector;
-import org.joy.spider.service.DownloadJob;
+import org.joy.spider.core.DownloadJob;
 
 /**
  *

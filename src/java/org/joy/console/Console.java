@@ -17,15 +17,15 @@ import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import org.joy.analyzer.service.AnalyzerGroup;
-import org.joy.analyzer.service.AnalyzerGroupProxy;
+import org.joy.analyzer.core.AnalyzerGroup;
+import org.joy.analyzer.core.AnalyzerGroupProxy;
 import org.joy.db.DBException;
-import org.joy.index.service.DBGroup;
-import org.joy.index.service.DBGroupProxy;
-import org.joy.rank.service.LinkSystemAnalyzer;
-import org.joy.spider.service.SpiderGroup;
-import org.joy.spider.service.SpiderGroupProxy;
-import org.joy.spider.service.DownloadJob;
+import org.joy.index.core.DBGroup;
+import org.joy.index.core.DBGroupProxy;
+import org.joy.rank.core.LinkSystemAnalyzer;
+import org.joy.spider.core.SpiderGroup;
+import org.joy.spider.core.SpiderGroupProxy;
+import org.joy.spider.core.DownloadJob;
 
 /**
  * 控制台类，负责对整个系统的调试和启动以及设置相应的参数

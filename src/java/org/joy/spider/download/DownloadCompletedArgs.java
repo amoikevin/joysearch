@@ -8,7 +8,7 @@
  */
 package org.joy.spider.download;
 
-import org.joy.spider.service.DownloadJob;
+import org.joy.spider.core.DownloadJob;
 
 public class DownloadCompletedArgs {
 

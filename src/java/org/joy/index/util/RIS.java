@@ -14,7 +14,7 @@ import java.util.Hashtable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.joy.index.db.RIStatistics;
-import org.joy.index.service.ServerImp;
+import org.joy.index.core.ServerImp;
 
 /**
  *

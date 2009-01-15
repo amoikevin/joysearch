@@ -20,12 +20,12 @@ import java.util.Hashtable;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import org.joy.db.DBException;
-import org.joy.rank.service.ServerImp;
-import org.joy.pagerank.BigBoolArray;
-import org.joy.pagerank.PageRank;
+import org.joy.rank.core.ServerImp;
+import org.joy.rank.core.BigBoolArray;
+import org.joy.rank.core.PageRank;
 import org.joy.deployer.Deployer;
 import org.joy.db.Command;
-import org.joy.index.service.UID;
+import org.joy.index.core.UID;
 /**
  *
  * @author 海

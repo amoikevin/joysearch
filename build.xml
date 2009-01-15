@@ -74,25 +74,25 @@
     -->
     <target name="-post-compile">
         <exec executable="${java.home}\..\bin\rmic.exe">
-            <arg line="-classpath build\classes -d build\classes org.joy.index.service.DBGroupImp"/>
+            <arg line="-classpath build\classes -d build\classes org.joy.index.core.DBGroupImp"/>
         </exec>
         <exec executable="${java.home}\..\bin\rmic.exe">
-            <arg line="-classpath build\classes -d build\classes org.joy.spider.service.SpiderGroupImp"/>
+            <arg line="-classpath build\classes -d build\classes org.joy.spider.core.SpiderGroupImp"/>
         </exec>
         <exec executable="${java.home}\..\bin\rmic.exe">
-            <arg line="-classpath build\classes; -d build\classes org.joy.index.service.ServerImp"/>
+            <arg line="-classpath build\classes; -d build\classes org.joy.index.core.ServerImp"/>
         </exec>
         <exec executable="${java.home}\..\bin\rmic.exe">
-            <arg line="-classpath C:\JoyDK\Java\servers\Group\build\classes;build\classes -d build\classes org.joy.analyzer.service.ServerImp"/>
+            <arg line="-classpath build\classes -d build\classes org.joy.analyzer.core.ServerImp"/>
         </exec>
         <exec executable="${java.home}\..\bin\rmic.exe">
-            <arg line="-classpath C:\JoyDK\Java\servers\Group\build\classes;build\classes -d build\classes org.joy.spider.service.ServerImp"/>
+            <arg line="-classpath build\classes -d build\classes org.joy.spider.core.ServerImp"/>
         </exec>
         <exec executable="${java.home}\..\bin\rmic.exe">
-            <arg line="-classpath C:\JoyDK\Java\Servers\Barton\build\classes;build\classes; -d build\classes org.joy.query.service.ServerImp"/>
+            <arg line="-classpath build\classes; -d build\classes org.joy.query.core.ServerImp"/>
         </exec>
         <exec executable="${java.home}\..\bin\rmic.exe">
-            <arg line="-classpath build\classes -d build\classes org.joy.rank.service.ServerImp"/>
+            <arg line="-classpath build\classes -d build\classes org.joy.rank.core.ServerImp"/>
         </exec>
     </target>
     <target name="-post-jar">

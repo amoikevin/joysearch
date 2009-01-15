@@ -10,7 +10,7 @@ package org.joy.index.db.entry;
 
 import com.sleepycat.bind.tuple.TupleInput;
 import com.sleepycat.bind.tuple.TupleOutput;
-import org.joy.group.service.JobResource;
+import org.joy.group.core.JobResource;
 
 /**
  *
