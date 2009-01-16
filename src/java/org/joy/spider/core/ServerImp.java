@@ -93,7 +93,7 @@ public class ServerImp extends UnicastRemoteObject
         if (args != null && args.getError() == null && !cancelled) {
             String text = args.getText();
             DownloadJob job = args.getJob();
-            System.out.println("成功下了 " + job.getURL());
+            Deployer.logger.info("成功下载 " + job.getURL());
             try {
                 // 添加URL,text
                 anaG.putJob(new DocumentJob(job, text, "HTML"));
@@ -120,7 +120,7 @@ public class ServerImp extends UnicastRemoteObject
                     waitJob();
                     continue;
                 }
-                Deployer.logger.info("正在下载" + job.getURL());
+               // Deployer.logger.info("正在下载" + job.getURL());
                 // 下载之
                 manager.start(job, this);
 

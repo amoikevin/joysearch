@@ -8,14 +8,13 @@ import org.joy.index.db.entry.Hits;
 import java.util.HashSet;
 import org.joy.deployer.Deployer;
 import java.util.Arrays;
+import org.joy.analyzer.html.Anchor;
+import org.joy.analyzer.html.HTMLDocument;
 import org.joy.index.core.DBGroup;
 import org.joy.index.core.DBGroupProxy;
 import org.joy.index.core.IndexJob;
 import org.joy.index.db.entry.Document;
 import org.joy.rank.core.LinkSystemAnalyzer;
-import org.joy.scan.HyperLink;
-import org.joy.scan.Paragraph;
-import org.joy.scan.HTMLParser;
 import org.joy.scan.Utility;
 import org.joy.spider.core.SpiderGroup;
 import org.joy.spider.core.SpiderGroupProxy;
@@ -31,8 +30,8 @@ public class Deliverer {
     private DBGroupProxy dbG;
     private LinkSystemAnalyzer rank;
     private SpiderGroupProxy sG;
-    private HashSet<String> allowed = new HashSet<String>();
-    private HashSet<String> denied = new HashSet<String>();
+    private final HashSet<String> allowed = new HashSet<String>();
+    private final HashSet<String> denied = new HashSet<String>();
     //负索引表
     private Spliter spliter;
 
@@ -44,7 +43,7 @@ public class Deliverer {
         spliter.setMode(Spliter.SPLIT);
     }
 
-    private boolean verifyURL(HyperLink link) {
+    private boolean verifyURL(Anchor link) {
         if (!Utility.isValidLink(link.getURL())) {
             return false;
         }
@@ -67,9 +66,9 @@ public class Deliverer {
         }
     }
 
-    private void addLinks(String URL, int level,HTMLParser parser) {
+    private void addLinks(String URL, int level,HTMLDocument doc) {
         //添加链接引用
-        for (HyperLink link : parser.getLinks()) {
+        for (Anchor link : doc.getAnchors()) {
             if (!verifyURL(link)) {
                 continue;
             }
@@ -79,12 +78,12 @@ public class Deliverer {
                 HitsGenerator gen = new HitsGenerator(link.getText(), link.getURL());
 
                 //生成Hits
-                Hits hs = gen.genHits(getWordSet(link.getText()), HTMLParser.REF_WEIGHT);
+                Hits hs = gen.genHits(getWordSet(link.getText()), .8f);
                 
                 if (hs != null && hs.size() != 0) {
                     //把链接信息集成到全文索引
                     dbG.putJob(new IndexJob(link.getURL(), hs));
-                    System.out.println("包含的连接"+link.getURL());
+                    //System.out.println("包含的连接"+link.getURL());
                 
                 }
                 //寻找下载资源下载之
@@ -105,44 +104,41 @@ public class Deliverer {
         return set.toArray(new String[0]);
     }
 
-    private void addHits(String URL, HTMLParser parser) {
+    private void addHits(String URL, HTMLDocument  doc) {
         try {
             //抽取网页文本
-            String text = parser.getBody();
+            String text = doc.getBody();
             //分词
             HitsGenerator gen = new HitsGenerator(text);
            
             Hits hs = new Hits();
             //处理每一个段落的关键字，并赋予权值，添加入Hits
-            int begin = 0, end = 0;
-            for (Paragraph p : parser.getParagraph()) {
-                if (begin > 4096) {
+            for (org.joy.analyzer.Paragraph p : doc.getParagraphs()) {
+                if (p.getOffset() > 4096) {
                     break;
                 }
-                end += p.getText().length();
                 String[] wordSet = getWordSet(p.getText());
-                Hits t = gen.genHits(wordSet, p.getWeight(), begin, end);
+                Hits t = gen.genHits(wordSet, (float)p.getWeight(), p.getOffset(), p.getOffset()+p.getText().length());
                 if (t != null) {
                     hs.combine(t);
                 }
-                begin += p.getText().length();
             }
             //综合两段Hits
-            dbG.putJob(new IndexJob(URL, hs, new Document(parser.getTitle(), parser.getBody())));
+            dbG.putJob(new IndexJob(URL, hs, new Document(doc.getTitle(),text )));
 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
-    public void deliver(DocumentJob job, HTMLParser parser) {
-        if (!verifyURL(new HyperLink(job.getURL(), null))) {
+    public void deliver(DocumentJob job, HTMLDocument doc) {
+        if (!verifyURL(new Anchor(null,job.getURL()))) {
             System.out.println(job.getURL() + "已被排除");
             return;
         }
         Deployer.logger.info("分析" + job.getURL());
-        addHits(job.getURL(), parser);
-        addLinks(job.getURL(),job.getLevel(),parser);
+        addHits(job.getURL(), doc);
+        addLinks(job.getURL(),job.getLevel(),doc);
     }
 
     public void shutdown() {

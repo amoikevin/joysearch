@@ -14,6 +14,7 @@ import java.net.MalformedURLException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.HashSet;
+import org.joy.analyzer.html.HTMLDocument;
 import org.joy.db.DBException;
 import org.joy.index.core.DBGroup;
 import org.joy.group.core.Job;
@@ -92,13 +93,13 @@ public class ServerImp extends UnicastRemoteObject implements Analyzer {
                 }
             }
 
-            private void analyze(DocumentJob job) throws ParseException, MalformedURLException {
+            private void analyze(DocumentJob job) throws org.joy.analyzer.html.ParseException, MalformedURLException {
                 System.out.println("正在扫描" + job.getURL());
-                HTMLParser parser = new HTMLParser();
+                //HTMLParser parser = new HTMLParser();
+                HTMLDocument doc = HTMLDocument.createHTMLDocument(job.getURL(), job.getText());
                 String text = job.getText().replaceAll("[\n|\r]", "");
-                parser.parse(text, job.getURL());
                 System.out.println("扫描结束");
-                deliver.deliver(job, parser);
+                deliver.deliver(job, doc);
                 System.out.println("分发结束");
             }
         });

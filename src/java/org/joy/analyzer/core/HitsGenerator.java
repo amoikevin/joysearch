@@ -33,35 +33,17 @@ public class HitsGenerator {
     }
 
     public int getNoisePos(String destURL, String text) {
-//        int noisePos = 0;
-//        Integer negPos = 
         return -Math.abs((new Random()).nextInt());
-
-//        if (negPos != null) {
-//            if (negPos < Integer.MIN_VALUE + text.length()) {
-//                noisePos = (short) (-1 - text.length());
-//                negTable.put(destURL.hashCode(), noisePos);
-//                System.out.println(destURL + "有了太多连接关键字");
-//                System.out.println("Opps");
-//            } else {
-//                noisePos = negPos - text.length();
-//                negTable.put(destURL.hashCode(), noisePos);
-//            }
-//        } else {
-//            noisePos = -text.length();
-//            negTable.put(destURL.hashCode(), noisePos);
-//        }
-//        return noisePos;
     }
 
-    public Hits genHits(String[] words, int pWeight, int begin, int end) {
+    public Hits genHits(String[] words, float pWeight, int begin, int end) {
         ArrayList<Hit> hitLst = new ArrayList<Hit>();
         //设置噪声扰动，当引用链接时，噪声位置为负
         int noisePos = 0;
         if (destURL != null) {
             noisePos = getNoisePos(destURL, text);
         }
-        
+
         //分析关键字、频率
         for (String word : words) {
             if (word.trim().equals("")) {
@@ -72,13 +54,13 @@ public class HitsGenerator {
 
             int hitPos;
             hitPos = text.toLowerCase().indexOf(word, begin);
-            while (hitPos != -1 && hitPos <= end) {
+            while (hitPos != -1 && hitPos <end) {
                 //关键字太多就不是关键字了
                 if (vecHitPos.size() > 32 || hitPos > 4096) {
                     break;
                 }
                 Pos p = new Pos((hitPos + noisePos),
-                        noisePos == 0 ? pWeight * (1 - hitPos / (float) text.length()) : //非引用的权重算法
+                        noisePos == 0 ? pWeight : //非引用的权重算法
                         pWeight); //引用的权重算法
 
                 vecHitPos.add(p);
@@ -96,7 +78,7 @@ public class HitsGenerator {
         }
     }
 
-    public Hits genHits(String[] words, int pWeight) {
+    public Hits genHits(String[] words, float pWeight) {
         return genHits(words, pWeight, 0, text.length());
     }
 }   

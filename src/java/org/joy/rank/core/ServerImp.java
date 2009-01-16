@@ -67,7 +67,7 @@ public class ServerImp extends UnicastRemoteObject implements LinkSystemAnalyzer
         //添加到对照表
         refCmd.setEntry(UID.from(from), from);
         refCmd.setEntry(UID.from(to), to);
-        System.out.println(from + "to" + to);
+      //  System.out.println(from + "to" + to);
     }
 
     public static void checkMem() {

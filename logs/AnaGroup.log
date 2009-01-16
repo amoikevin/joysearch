@@ -1,5 +1,6 @@
 INFO - 分析服务器组注册器开始启动
 INFO - 分析服务器组注册器成功启动
-INFO - 注册一个interface org.joy.index.service.Database@rmi://192.168.151.117/DataNode
-INFO - 注册一个interface org.joy.spider.service.Spider@rmi://192.168.151.117/249a3d63-b5cd-48ac-a888-6b8424a9fc26
-INFO - 注册一个interface org.joy.analyzer.service.Analyzer@rmi://192.168.151.117/8349bef6-4760-4835-a1e1-e2b7e4d0c7ac
+INFO - 注册一个interface org.joy.analyzer.core.Analyzer@rmi://192.168.151.117/72105889-7d85-4734-be50-5fbdc2fcba33
+INFO - 注册一个interface org.joy.index.core.Database@rmi://192.168.151.117/DataNode
+INFO - 注册一个interface org.joy.spider.core.Spider@rmi://192.168.151.117/a5aba332-d6b2-4cc0-9264-95f1aa33c1b6
+INFO - 解除一个interface org.joy.analyzer.core.Analyzer@rmi://192.168.151.117/72105889-7d85-4734-be50-5fbdc2fcba33

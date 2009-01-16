@@ -44,7 +44,7 @@ public class Main extends Deployer {
             register(server);
             long start = Calendar.getInstance().getTimeInMillis();
 
-            Result[] ies = server.getPage("苏州大学", 0);
+            Result[] ies = server.getPage("首页", 0);
             long end = Calendar.getInstance().getTimeInMillis();
             System.out.println("搜索功耗时" + (end - start) + "毫秒");
             System.out.println("找到:" + ies.length + "个结果");

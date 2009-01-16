@@ -31,12 +31,11 @@ public class SpiderGroupProxy implements Spider {
         //验证URL是否可下载
         if (group.request(((DownloadJob) job).getURL())) {
             getSpider().putJob(job);
-        }
-        else
-            System.out.println("不可下载的链接"+((DownloadJob)job).getURL());
+        } else;
+    //System.out.println("不可下载的链接"+((DownloadJob)job).getURL());
     }
 
-    public void reset() throws RemoteException{
+    public void reset() throws RemoteException {
         group.reset();
         System.out.println("网页链接库清空完成");
     }

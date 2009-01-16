@@ -121,7 +121,7 @@ public class ServerImp extends UnicastRemoteObject implements SearchServer, Data
                    // docCmd.setEntry(job.getURL(), doc);
                 }
 
-                Deployer.logger.info(job.getURL());
+                //Deployer.logger.info(job.getURL());
                 reader.close();
                 cache.put(job.getURL(), job.getHits());
             } else if (j instanceof RankUpdateJob) {
