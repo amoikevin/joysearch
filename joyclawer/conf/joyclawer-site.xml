@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+<property>
+  <name>org.joy.clawer.regEx</name>
+  <value>http://.*localhost.*</value>
+  <description>A base for other temporary directories.</description>
+</property>
+<property>
+  <name>org.joy.clawer.dir</name>
+  <value>clawer/</value>
+  <description>A base for other temporary directories.</description>
+</property>
+</configuration>
