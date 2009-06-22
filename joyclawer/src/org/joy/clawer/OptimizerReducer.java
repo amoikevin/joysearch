@@ -4,7 +4,7 @@ import org.apache.hadoop.io.BooleanWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
-public class OptReducer extends Reducer<Text, BooleanWritable, Text, Text> {
+public class OptimizerReducer extends Reducer<Text, BooleanWritable, Text, Text> {
 	protected void reduce(
 			Text key,
 			java.lang.Iterable<BooleanWritable> values,

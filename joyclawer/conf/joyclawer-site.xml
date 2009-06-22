@@ -6,7 +6,7 @@
 <configuration>
 <property>
   <name>org.joy.clawer.regEx</name>
-  <value>http://.*localhost.*</value>
+  <value>http://.*zh.wikipedia.org.*</value>
   <description>A base for other temporary directories.</description>
 </property>
 <property>

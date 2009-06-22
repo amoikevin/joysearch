@@ -34,7 +34,7 @@ public class Clawer extends Configured implements Tool {
 			res = ToolRunner.run(getConf(), new ParserDriver(), args);
 			if (res != 0)
 				return 1;
-			res = ToolRunner.run(getConf(), new OptDriver(), args);
+			res = ToolRunner.run(getConf(), new OptimizerDriver(), args);
 			if (res != 0)
 				return 1;
 		}

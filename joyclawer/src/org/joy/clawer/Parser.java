@@ -34,7 +34,8 @@ public class Parser extends SAXParser {
 				u = new URL(new URL(context), href);
 				String url = u.toString();
 				String suffix = u.getFile();
-				url = url.replaceAll("\\.\\/", "");
+				url = url.replaceAll("\\/\\.\\/", "\\/");
+				url = url.replaceAll("\\/[^\\/]+\\/\\.\\.\\/", "\\/");
 				// 避免主页重定向
 				if (suffix.endsWith("index.htm")
 						|| suffix.endsWith("index.html")
@@ -43,7 +44,7 @@ public class Parser extends SAXParser {
 						|| suffix.endsWith("index.php")
 						|| suffix.endsWith("index.jsp")) {
 					url = url.substring(0, url.lastIndexOf("/") + 1);
-				} else if (u.getPath().indexOf(".") == -1 && !url.endsWith("/")) {
+				} else if (u.getPath().equals("") && !url.endsWith("/")) {
 					// 一律写成**/的形式
 					url = url + "/";
 				}

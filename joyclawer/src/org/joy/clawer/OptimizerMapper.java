@@ -5,7 +5,7 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class OptMapper extends
+public class OptimizerMapper extends
 		Mapper<LongWritable, Text, Text, BooleanWritable> {
 
 	protected void map(

@@ -1,1 +1,1 @@
-http://localhost/scst/
+http://zh.wikipedia.org/w/index.php?title=Wikipedia:首页&variant=zh-cn

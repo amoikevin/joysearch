@@ -15,9 +15,9 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-public class OptDriver extends Configured implements Tool {
+public class OptimizerDriver extends Configured implements Tool {
 	public static void main(String[] args) throws Exception {
-		int res = ToolRunner.run(new Configuration(), new OptDriver(), args);
+		int res = ToolRunner.run(new Configuration(), new OptimizerDriver(), args);
 		System.exit(res);
 	}
 
@@ -26,8 +26,8 @@ public class OptDriver extends Configured implements Tool {
 		Configuration conf = getConf();
 		Job job = new Job(conf, "优化");
 		job.setJarByClass(Clawer.class);
-		job.setMapperClass(OptMapper.class);
-		job.setReducerClass(OptReducer.class);
+		job.setMapperClass(OptimizerMapper.class);
+		job.setReducerClass(OptimizerReducer.class);
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(BooleanWritable.class);
 		
