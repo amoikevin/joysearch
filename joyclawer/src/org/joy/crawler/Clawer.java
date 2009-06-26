@@ -1,4 +1,4 @@
-package org.joy.clawer;
+package org.joy.crawler;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;

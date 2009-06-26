@@ -1,4 +1,4 @@
-package org.joy.clawer;
+package org.joy.crawler;
 /**
  * @author LamFeeling 
  * 下载失败触发的异常

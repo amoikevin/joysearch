@@ -3,7 +3,7 @@
  * xScanner core
  * Created on 2006年2月11日, 上午12:06
  */
-package org.joy.clawer;
+package org.joy.crawler;
 
 import java.io.BufferedReader;
 import java.io.IOException;

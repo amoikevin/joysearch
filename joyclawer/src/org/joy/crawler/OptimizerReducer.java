@@ -1,4 +1,4 @@
-package org.joy.clawer;
+package org.joy.crawler;
 
 import org.apache.hadoop.io.BooleanWritable;
 import org.apache.hadoop.io.Text;
