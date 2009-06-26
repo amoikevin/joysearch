@@ -1,6 +1,5 @@
 /*
- * PageDownloader.java
- * xScanner core
+ * Downloader.java
  * Created on 2006年2月11日, 上午12:06
  */
 package org.joy.crawler;
@@ -16,7 +15,7 @@ import java.net.URLConnection;
 /**
  * 页面下载器，负责下载给定的页面
  */
-public class Tourer {
+public class Downloader {
 
     private StringBuilder pageBuffer = new StringBuilder();
     private int timeOut = 15000;
@@ -27,12 +26,12 @@ public class Tourer {
     private Thread downloadThread;
     private String charset;
 
-    public Tourer() {
+    public Downloader() {
         downloadThread = Thread.currentThread();
     }
 
     public static void main(String[] args) throws DownloadException {
-        Tourer t = new Tourer();
+        Downloader t = new Downloader();
         System.out.println(t.download("http://www.126.com"));
     }
 

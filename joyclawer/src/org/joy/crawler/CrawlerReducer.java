@@ -7,7 +7,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 public class CrawlerReducer extends Reducer<Text, LongWritable, Text, Text> {
-	private Tourer t = new Tourer();
+	private Downloader t = new Downloader();
 
 	public void reduce(Text text, Iterable<LongWritable> values, Context context)
 			throws IOException, InterruptedException {
