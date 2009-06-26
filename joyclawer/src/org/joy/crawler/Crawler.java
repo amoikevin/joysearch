@@ -7,9 +7,9 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-public class Clawer extends Configured implements Tool {
+public class Crawler extends Configured implements Tool {
 	public static void main(String[] args) throws Exception {
-		int res = ToolRunner.run(new Configuration(), new Clawer(), args);
+		int res = ToolRunner.run(new Configuration(), new Crawler(), args);
 		System.exit(res);
 	}
 
@@ -28,7 +28,7 @@ public class Clawer extends Configured implements Tool {
 				new Path(getConf().get("org.joy.clawer.dir")+"in/init.txt"));
 		
 		for (int i = 0; i < 15; i++) {
-			int res = ToolRunner.run(getConf(), new ClawerDriver(), args);
+			int res = ToolRunner.run(getConf(), new CrawlerDriver(), args);
 			if (res != 0)
 				return 1;
 			res = ToolRunner.run(getConf(), new ParserDriver(), args);

@@ -26,7 +26,7 @@ public class ParserDriver extends Configured implements Tool {
 	public int run(String[] arg0) throws Exception {
 		Configuration conf = getConf();
 		Job job = new Job(conf, "分析");
-		job.setJarByClass(Clawer.class);
+		job.setJarByClass(Crawler.class);
 		job.setMapperClass(ParserMapper.class);
 		job.setNumReduceTasks(0);
 		job.setOutputKeyClass(Text.class);

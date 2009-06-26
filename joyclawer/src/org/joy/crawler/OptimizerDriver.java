@@ -25,7 +25,7 @@ public class OptimizerDriver extends Configured implements Tool {
 	public int run(String[] arg0) throws Exception {
 		Configuration conf = getConf();
 		Job job = new Job(conf, "优化");
-		job.setJarByClass(Clawer.class);
+		job.setJarByClass(Crawler.class);
 		job.setMapperClass(OptimizerMapper.class);
 		job.setReducerClass(OptimizerReducer.class);
 		job.setOutputKeyClass(Text.class);

@@ -17,10 +17,10 @@ import org.apache.hadoop.util.ToolRunner;
 
 import sun.misc.Sort;
 
-public class ClawerDriver extends Configured implements Tool {
+public class CrawlerDriver extends Configured implements Tool {
 
 	public static void main(String[] args) throws Exception {
-		int res = ToolRunner.run(new Configuration(), new ClawerDriver(), args);
+		int res = ToolRunner.run(new Configuration(), new CrawlerDriver(), args);
 		System.exit(res);
 	}
 
@@ -29,9 +29,9 @@ public class ClawerDriver extends Configured implements Tool {
 		// TODO Auto-generated method stub
 		Configuration conf = getConf();
 		Job job = new Job(conf, "下载");
-		job.setJarByClass(Clawer.class);
+		job.setJarByClass(Crawler.class);
 		job.setMapperClass(InverseMapper.class);
-		job.setReducerClass(ClawerReducer.class);
+		job.setReducerClass(CrawlerReducer.class);
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(LongWritable.class);
 		job.setNumReduceTasks(15);

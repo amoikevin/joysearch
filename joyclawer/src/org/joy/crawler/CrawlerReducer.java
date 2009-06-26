@@ -6,7 +6,7 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
-public class ClawerReducer extends Reducer<Text, LongWritable, Text, Text> {
+public class CrawlerReducer extends Reducer<Text, LongWritable, Text, Text> {
 	private Tourer t = new Tourer();
 
 	public void reduce(Text text, Iterable<LongWritable> values, Context context)
