@@ -6,12 +6,22 @@
 <configuration>
 <property>
   <name>org.joy.clawer.regEx</name>
-  <value>http://.*zh.wikipedia.org.*</value>
+  <value>http://.*.suda.edu.cn.*</value>
   <description>A base for other temporary directories.</description>
 </property>
 <property>
   <name>org.joy.clawer.dir</name>
   <value>clawer/</value>
+  <description>A base for other temporary directories.</description>
+</property>
+<property>
+  <name>org.joy.crawler.worker</name>
+  <value>5</value>
+  <description>A base for other temporary directories.</description>
+</property>
+<property>
+  <name>org.joy.crawler.worker.max</name>
+  <value>10240000</value>
   <description>A base for other temporary directories.</description>
 </property>
 </configuration>
