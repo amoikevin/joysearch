@@ -26,7 +26,7 @@ public class CrawlerDriver extends Configured implements Tool {
 
 	@Override
 	public int run(String[] arg0) throws Exception {
-		// TODO Auto-generated method stub
+		// config a job and start it
 		Configuration conf = getConf();
 		Job job = new Job(conf, "下载");
 		job.setJarByClass(Crawler.class);
@@ -34,7 +34,6 @@ public class CrawlerDriver extends Configured implements Tool {
 		job.setReducerClass(CrawlerReducer.class);
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(LongWritable.class);
-		job.setNumReduceTasks(15);
 
 		String workdir = conf.get("org.joy.clawer.dir");
 		FileSystem fs = FileSystem.get(conf);

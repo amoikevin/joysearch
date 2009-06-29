@@ -1,14 +1,18 @@
 package org.joy.crawler;
 
+import java.io.PrintStream;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
+import org.apache.log4j.Logger;
 
 public class Crawler extends Configured implements Tool {
 	public static void main(String[] args) throws Exception {
+		Logger.getRootLogger().removeAppender("console");
 		int res = ToolRunner.run(new Configuration(), new Crawler(), args);
 		System.exit(res);
 	}
