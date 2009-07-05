@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.log4j.Logger;
 
 public class CrawlerReducer extends Reducer<Text, LongWritable, Text, Text> {
 
@@ -33,8 +34,7 @@ public class CrawlerReducer extends Reducer<Text, LongWritable, Text, Text> {
 				public void run() {
 					// TODO Auto-generated method stub
 					Downloader t = new Downloader();
-					System.out.println("downloading\t" + url);
-
+					Logger.getRootLogger().info("download"+url);
 					try {
 						String content = t.download(url)
 								.replaceAll("\\n+", " ").replaceAll(
@@ -42,9 +42,10 @@ public class CrawlerReducer extends Reducer<Text, LongWritable, Text, Text> {
 						synchronized (context) {
 							context.write(new Text(url), new Text(content));
 						}
+						System.out.print(".");
 					} catch (Exception e) {
 						synchronized (context) {
-							System.err.println(e.getMessage());
+							System.err.print("*");
 							try {
 								context.write(new Text(url), new Text(
 										"Visted, but not available!"));

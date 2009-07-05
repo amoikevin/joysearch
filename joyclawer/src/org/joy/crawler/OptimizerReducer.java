@@ -19,7 +19,7 @@ public class OptimizerReducer extends Reducer<Text, BooleanWritable, Text, Text>
 		if (!visited) {
 			context.write(new Text(key), new Text(""));
 		}else{
-			System.out.println(key);
+			//System.out.println(key);
 		}
 	};
 }

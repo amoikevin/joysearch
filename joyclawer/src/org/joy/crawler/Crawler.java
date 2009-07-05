@@ -32,12 +32,15 @@ public class Crawler extends Configured implements Tool {
 				new Path(getConf().get("org.joy.clawer.dir")+"in/init.txt"));
 		
 		for (int i = 0; i < 15; i++) {
+			System.out.println("start downloading...");
 			int res = ToolRunner.run(getConf(), new CrawlerDriver(), args);
 			if (res != 0)
 				return 1;
+			System.out.println("\nstart parsing...");
 			res = ToolRunner.run(getConf(), new ParserDriver(), args);
 			if (res != 0)
 				return 1;
+			System.out.println("\nstart filtering...");
 			res = ToolRunner.run(getConf(), new OptimizerDriver(), args);
 			if (res != 0)
 				return 1;

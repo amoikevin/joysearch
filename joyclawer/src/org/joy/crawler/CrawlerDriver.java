@@ -1,7 +1,5 @@
 package org.joy.crawler;
 
-import java.io.IOException;
-
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FileSystem;
@@ -14,8 +12,6 @@ import org.apache.hadoop.mapreduce.lib.map.InverseMapper;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
-
-import sun.misc.Sort;
 
 public class CrawlerDriver extends Configured implements Tool {
 

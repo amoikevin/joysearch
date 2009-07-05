@@ -12,6 +12,8 @@ import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.URLConnection;
 
+import org.apache.log4j.Logger;
+
 /**
  * 页面下载器，负责下载给定的页面
  */
@@ -82,10 +84,10 @@ public class Downloader {
             }
 
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Downloader.class).error(e.getMessage());
             throw new ConnectException("Failed to connect " + URL);
         } catch (RuntimeException e) {
-            System.out.println(e.getMessage());
+        	Logger.getLogger(Downloader.class).error(e.getMessage());
             throw new ConnectException("Failed to connect " + URL);
         }
         connecting = false;
@@ -129,7 +131,7 @@ public class Downloader {
         } catch (ConnectException e) {
             throw new DownloadException("Connect failed: " + e.getMessage() + URL);
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+        	Logger.getLogger(Downloader.class).error(e.getMessage());
             throw new DownloadException("IO Exception: " + e.getMessage() + URL);
         } finally {
             try {

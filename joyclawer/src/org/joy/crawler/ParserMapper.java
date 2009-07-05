@@ -3,6 +3,7 @@ package org.joy.crawler;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.log4j.Logger;
 
 public class ParserMapper extends Mapper<LongWritable, Text, Text, Text> {
 	private static Parser parser = new Parser();
@@ -15,7 +16,8 @@ public class ParserMapper extends Mapper<LongWritable, Text, Text, Text> {
 			String url = line.split("\\t")[0];
 			String text = line.split("\\t")[1];
 			context.setStatus(url);
-			System.out.println("分析\t" + url);
+			Logger.getRootLogger().info("parsing"+url);
+			System.out.print(".");
 
 			context.write(new Text(url), new Text("NULL"));
 
