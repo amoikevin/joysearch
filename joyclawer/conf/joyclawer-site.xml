@@ -6,22 +6,17 @@
 <configuration>
 <property>
   <name>org.joy.clawer.regEx</name>
-  <value>http://.*.suda.edu.cn.*</value>
+  <value>http://.*blog.sina.com.cn/.*</value>
   <description>A base for other temporary directories.</description>
 </property>
 <property>
   <name>org.joy.clawer.dir</name>
-  <value>clawer/</value>
+  <value>下载2/</value>
   <description>A base for other temporary directories.</description>
 </property>
 <property>
   <name>org.joy.crawler.worker</name>
-  <value>5</value>
-  <description>A base for other temporary directories.</description>
-</property>
-<property>
-  <name>org.joy.crawler.worker.max</name>
-  <value>10240000</value>
+  <value>10</value>
   <description>A base for other temporary directories.</description>
 </property>
 </configuration>
