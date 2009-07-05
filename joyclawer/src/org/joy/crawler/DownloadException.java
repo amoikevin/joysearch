@@ -5,6 +5,9 @@ package org.joy.crawler;
  */
 public class DownloadException extends Exception {
 
+	public DownloadException(Throwable ex){
+		super(ex);
+	}
     public DownloadException(){}
     public DownloadException(String msg)
     {

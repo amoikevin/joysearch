@@ -12,7 +12,6 @@ import org.apache.log4j.Logger;
 
 public class Crawler extends Configured implements Tool {
 	public static void main(String[] args) throws Exception {
-		Logger.getRootLogger().removeAppender("console");
 		int res = ToolRunner.run(new Configuration(), new Crawler(), args);
 		System.exit(res);
 	}
